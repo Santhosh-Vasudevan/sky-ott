@@ -1,23 +1,35 @@
-# Getting Started with Create React App
+# Sky View App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive OTT-style web application that displays a rich catalog of movies with interactive search and data visualization. Users can explore movies, view detailed information, and analyze streaming activity trends over time.
 
-## Available Scripts
+## 📌 About the App
 
-In the project directory, you can run:
+Sky View mimics a simplified OTT platform interface inspired by services like Netflix or Disney+. It offers:
 
-### `npm start`
+- A home page with featured movie banners and categorized movie rows.
+- Search and filter functionality for quick movie discovery.
+- A detailed view for each movie.
+- A dashboard showing time-based streaming activity (timeseries chart).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## ⚙️ Install & Run Locally
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+# 1. Clone the repository
+git clone <HTTPS | SSH>
+cd sky-view
+
+# 2. Install dependencies
+npm install
+
+# 3. Run the development server
+npm start
+```
+
+Preview: `http://localhost:3000`
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in the interactive watch mode.
 
 ### `npm run build`
 
@@ -27,20 +39,56 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🧱 Tech Stack Used
 
-### `npm run eject`
+| Category         | Tools / Libraries                       |
+| ---------------- | --------------------------------------- |
+| Frontend         | React, TypeScript                       |
+| Routing          | React Router DOM                        |
+| State Management | React Hooks (useState, useEffect)       |
+| Data Fetch       | Fetch API                               |
+| Styling          | Styled Components                       |
+| Chart Library    | Recharts (for timeseries visualization) |
+| Icons            | React Icons                             |
+| Loading UI       | Custom Loader Component                 |
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## ✨ Features Implemented
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Home Page
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Dynamic **hero banner** (random movie per render).
+- Scrollable rows for **Sky Disney** and **Sky Cinema** content.
+- Responsive poster cards with hover effects.
+- **Navigation** to movie details on click.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Movies Page
+
+- **Search bar** to find movies by name (live filtering).
+- **Genre filter dropdown** to refine results.
+- Clickable movie cards to view **detailed info**.
+- Responsive design with lazy-loaded images for performance.
+
+### Movie Details Page
+
+- Detailed movie information including:
+  - Description, views, provider, duration, genres.
+  - Styled layout and **back navigation**.
+
+### Timeseries Dashboard
+
+- Interactive **line chart** showing streaming activity over time.
+- Explanation of how timeseries relates to OTT platform usage.
+- Navigation back to Movies Page.
+
+## ✅ Future Enhancements (Optional Ideas)
+
+- Sort movies by popularity or views.
+- Show related movies on the details page.
+- Add pagination or infinite scroll.
+- Deploy with Vercel/Netlify for live demo.
 
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To learn React, check out the [React documentation](https://reactjs.org/)
