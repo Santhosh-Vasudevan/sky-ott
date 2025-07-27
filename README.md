@@ -19,6 +19,7 @@ git clone <HTTPS | SSH>
 cd sky-view
 
 # 2. Install dependencies
+nvm use
 npm install
 
 # 3. Run the development server
