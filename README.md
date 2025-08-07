@@ -57,7 +57,7 @@ Your app is ready to be deployed!
 
 ### Home Page
 
-- Dynamic **hero banner** (random movie per render).
+- Static **hero banner** (default movie for every render).
 - Scrollable rows for **Sky Disney** and **Sky Cinema** content.
 - Responsive poster cards with hover effects.
 - **Navigation** to movie details on click.
@@ -80,13 +80,6 @@ Your app is ready to be deployed!
 - Interactive **line chart** showing streaming activity over time.
 - Explanation of how timeseries relates to OTT platform usage.
 - Navigation back to Movies Page.
-
-## ✅ Future Enhancements (Optional Ideas)
-
-- Sort movies by popularity or views.
-- Show related movies on the details page.
-- Add pagination or infinite scroll.
-- Deploy with Vercel/Netlify for live demo.
 
 ## Learn More
 
