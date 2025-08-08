@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -8,6 +8,8 @@ import Loader from "../components/Loader";
 import { fetchMovies } from "../services/api";
 
 import { Movie } from "../types/index";
+import { useFetch } from "../hooks/useFetch";
+import { PRODUCT_URL } from "../utils/constant";
 
 const HeroSection = styled.div`
   position: relative;
@@ -79,26 +81,22 @@ const ScrollRow = styled.div`
 `;
 
 const HomePage: React.FC = () => {
-  const [movies, setMovies] = useState<Movie[]>([]);
-  const [loading, setLoading] = useState(true);
+  const {data: movies, loading, error} = useFetch({url: PRODUCT_URL});
 
-  useEffect(() => {
-    const loadMovies = async () => {
-      const data = await fetchMovies();
-      setMovies(data);
-      setLoading(false);
-    };
-    loadMovies();
-  }, []);
-
-  const skyDisneyMovies = movies.filter(movie => movie.provider === "Sky Disney");
-  const skyCinemaMovies = movies.filter(movie => movie.provider === "Sky Cinema");
+  const skyDisneyMovies = Array.isArray(movies) ? movies.filter((movie: Movie) => movie.provider === "Sky Disney") : [];
+  const skyCinemaMovies = Array.isArray(movies) ? movies.filter((movie: Movie) => movie.provider === "Sky Cinema") : [];
 
   const heroMovie = skyDisneyMovies[0];
 
   if (loading) return (
     <Layout>
       <Loader />
+    </Layout>
+  );
+
+  if (error) return (
+    <Layout>
+      <p>Error loading movies: {error}</p>
     </Layout>
   );
 
