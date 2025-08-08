@@ -7,6 +7,7 @@ import Loader from "../components/Loader";
 import { fetchMovies } from "../services/api";
 
 import { Movie } from "../types/index";
+// import axios from "axios";
 
 const Container = styled.div`
   padding: 20px;
@@ -14,23 +15,19 @@ const Container = styled.div`
 
 const FilterContainer = styled.div`
   display: flex;
-  align-items: center;
   justify-content: space-between;
   margin: 20px 0;
+  gap: 20px;
 
   select {
     padding: 6px 10px;
     font-size: 1rem;
     border-radius: 6px;
     border: 1px solid #ccc;
-    outline: none;
   }
 
   @media (max-width: 768px) {
-    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 18px;
   }
 `;
 
@@ -53,10 +50,13 @@ const SearchBar = styled.div`
   }
 `;
 
-const Grid = styled.div`
+const MovieCardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
 `;
 
 const NoResults = styled.p`
@@ -113,7 +113,7 @@ const MoviesPage: React.FC = () => {
               />
             </SearchBar>
             <div>
-              <label>Filter by Genre: </label>
+              <label about="genre">Filter by Genre: </label>
               <select
                 id="genre"
                 name="genre"
@@ -134,11 +134,11 @@ const MoviesPage: React.FC = () => {
           {filteredMovies.length === 0 ? (
             <NoResults>No movies found.</NoResults>
           ) : (
-            <Grid>
+            <MovieCardContainer>
               {filteredMovies.map((movie) => (
                 <MovieCard key={movie.name} movie={movie} />
               ))}
-            </Grid>
+            </MovieCardContainer>
           )}
         </Container>}
     </Layout>

@@ -22,13 +22,14 @@ const HeroSection = styled.div`
 
 const Overlay = styled.div`
   position: absolute;
-  top: 0; left: 0;
-  right: 0; bottom: 0;
+  top: 0; 
+  left: 0;
+  right: 0; 
+  bottom: 0;
   background: rgba(0,0,0,0.5);
 `;
 
 const HeroContent = styled.div`
-  position: relative;
   z-index: 2;
   max-width: 600px;
 
@@ -43,7 +44,6 @@ const HeroContent = styled.div`
 `;
 
 const HeroButtons = styled.div`
-  margin-top: 20px;
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
@@ -51,14 +51,14 @@ const HeroButtons = styled.div`
 
 const HeroButton = styled(Link) <{ secondary?: boolean }>`
   padding: 10px 16px;
-  background-color: ${({ secondary }) => (secondary ? "#555" : "#0070f3")};
+  background-color: ${({ secondary }) => (secondary ? "#555555" : "#0070f3")};
   color: white;
   border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
 
   &:hover {
-    background-color: ${({ secondary }) => (secondary ? "#333" : "#005bb5")};
+    background-color: ${({ secondary }) => (secondary ? "#333333" : "#005bb5")};
   }
 `;
 

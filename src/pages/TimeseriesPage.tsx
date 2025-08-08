@@ -42,7 +42,6 @@ const StyledLink = styled(Link)`
 const ChartWrapper = styled.div`
   background: #f9f9f9;
   padding: 16px;
-  border-radius: 8px;
   margin-top: 20px;
 
   @media (max-width: 768px) {

@@ -17,7 +17,6 @@ const Card = styled.div`
   width: 220px;
   border: 1px solid #ddd;
   border-radius: 10px;
-  overflow: hidden;
   background: white;
   margin: 10px;
   transition: transform 0.2s;
@@ -26,9 +25,6 @@ const Card = styled.div`
     transform: scale(1.03);
   }
 
-  @media (max-width: 1024px) {
-    width: 180px;
-  }
   @media (max-width: 768px) {
     width: 100%;
     margin: 10px 0;
